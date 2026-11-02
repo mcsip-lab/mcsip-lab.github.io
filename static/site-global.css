@@ -1,0 +1,106 @@
+/* Shared identity and reading styles across the homepage, archive and team. */
+body { --ink: #193a50; --muted: #597083; --accent: #1b7180; --line: #dbe4ec; --cream: #f6f8fb; --design-review-height: 0px; color: var(--ink); background: var(--cream); }
+html { scroll-padding-top: 108px; }
+.site-header,body[class*="design-"] .site-header { top: var(--design-review-height); border-top: 0; border-bottom: 1px solid var(--line); background: #fffffff5; backdrop-filter: blur(14px); }
+.header-inner { width: min(1760px,calc(100% - 64px)); min-height: 88px; gap: 28px; }
+.brand { min-width: 0; gap: 13px; }
+.brand img { width: 53px; height: 53px; object-fit: contain; }
+.brand .brand-wordmark { display: grid; gap: 3px; min-width: 0; }
+.brand .brand-university { display: block; color: #557184; font: 14px/1.5 var(--sans); letter-spacing: .12em; }
+.brand .brand-title { font-size: 19px; color: #193a50; line-height: 1.5; font-weight: 650; letter-spacing: .015em; }
+.site-nav { display: flex; gap: 32px; flex-shrink: 0; font-size: 16px; }
+.site-nav a { padding-block: 29px 26px; border-bottom: 3px solid transparent; }
+.site-nav a[aria-current="page"],.site-nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.nav-toggle { display: none; }
+.text-link,.publication-links { color: var(--accent); }
+.publication-archive { width: min(1320px,calc(100% - 64px)); padding-top: 32px; }
+.publication-body h3 { font-size: 18px; line-height: 1.65; }
+.publication-body .authors { font-size: 15px; line-height: 1.8; color: #607487; }
+.publication-meta { font-size: 14px; line-height: 1.7; }
+.publication-links { font-size: 15px; }
+.paper-abstract > summary { font-size: 15px; color: #456b7e; min-height: 36px; padding-top: 5px; }
+.paper-abstract > p { font-size: 16px; color: #486171; line-height: 1.95; }
+.publication-search label { font-size: 15px; }
+.publication-search input,.publication-search select,.publication-search button { font-size: 16px; }
+.member-page { width: min(1220px,calc(100% - 64px)); }
+.profile-copy > p { font-size: 17px; line-height: 1.95; }
+.profile-links { font-size: 16px; }
+.profile-honors h3 { font-size: 17px; }
+.team-page { width: min(1440px,calc(100% - 64px)); margin: 34px auto 44px; }
+.team-page > .container { width: 100%; margin-inline: 0; }
+.team-page-heading { margin-bottom: 28px; display: flex; gap: 18px; align-items: baseline; }
+.team-page-heading h1 { margin: 0; font-size: 32px; font-weight: 650; }
+.team-page-heading > p { margin: 0; color: var(--muted); font-size: 16px; }
+.team-page .faculty-directory-section { padding: 0; }
+.faculty-directory { display: grid; gap: 18px; }
+.faculty-directory-card { display: grid; grid-template-columns: 128px minmax(0,1fr); gap: 27px; padding: 26px; border: 1px solid var(--line); border-radius: 10px; background: white; }
+.faculty-directory-portrait { width: 128px; height: 168px; overflow: hidden; border-radius: 6px; background: #e4ecf2; }
+.faculty-directory-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.faculty-directory-copy { min-width: 0; }
+.faculty-directory-copy h3 { margin: 0 0 5px; font-size: 27px; line-height: 1.4; }
+.faculty-directory-copy .faculty-role { margin: 0 0 10px; color: #526e81; font-size: 16px; min-height: 0; }
+.faculty-directory-bio { margin: 0 0 12px; color: #456071; font-size: 17px; line-height: 1.95; }
+.faculty-directory-topics { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0 0 15px; list-style: none; }
+.faculty-directory-topics li { padding: 3px 10px; background: #edf3f8; color: #3e627d; border-radius: 4px; font-size: 14px; }
+.faculty-directory-copy .faculty-links,.faculty-directory-copy .faculty-email { font-size: 15px; }
+.team-page .student-section { padding: 0; margin-top: 35px; }
+.team-page .student-degree-group { display: grid; grid-template-columns: 160px 1fr; gap: 28px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.student-degree-group h3 { margin: 0; font-size: 20px; }
+.student-degree-group h3 span { display: block; font-size: 14px; font-weight: 400; color: var(--muted); }
+.team-page .student-roster { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 15px 26px; }
+.student-roster-entry { display: flex; flex-direction: column; min-width: 0; }
+.student-roster-entry strong { font-size: 17px; font-weight: 600; }
+.student-roster-entry > span { font-size: 15px; color: var(--muted); }
+.team-page .participation-section { padding: 0; margin-top: 35px; }
+.contact-copy p { color: #486476; font-size: 17px; line-height: 1.95; }
+.section-caption { font-size: 14px; color: var(--muted); }
+footer { border-top: 1px solid var(--line); background: white; }
+.footer-inner { width: min(1760px,calc(100% - 64px)); padding-block: 24px; gap: 12px 30px; font-size: 14px; }
+.footer-inner p { color: #61798a; }
+@media(max-width:980px) {
+  .header-inner { width: calc(100% - 40px); gap: 18px; }
+  .brand .brand-title { font-size: 17px; }
+  .site-nav { gap: 22px; font-size: 15px; }
+  .team-page { width: calc(100% - 40px); }
+  .team-page .student-degree-group { grid-template-columns: 125px 1fr; gap: 20px; }
+  .team-page .student-roster { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:760px) {
+  .header-inner { width: calc(100% - 28px); min-height: 82px; gap: 12px; }
+  .brand { gap: 10px; }
+  .brand img { width: 43px; height: 43px; }
+  .brand .brand-title { font-size: 16px; letter-spacing: 0; line-height: 1.5; }
+  .brand .brand-university { font-size: 13px; letter-spacing: .06em; }
+  .nav-toggle { display: grid; flex-shrink: 0; place-content: center; gap: 6px; width: 40px; min-width: 40px; min-height: 44px; padding: 8px; color: var(--ink); background: none; border: 0; }
+  .nav-toggle span { display: block; width: 23px; height: 2px; background: currentColor; }
+  .site-nav { position: absolute; inset: 100% 0 auto; display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 24px 16px; border-bottom: 1px solid var(--line); background: white; box-shadow: 0 12px 18px #193a500b; font-size: 16px; }
+  .site-nav.open { display: flex; }
+  .site-nav a { padding: 12px 0; border-bottom: 1px solid #e2e9ef; }
+  .site-nav a[aria-current="page"] { border-bottom: 1px solid var(--accent); font-weight: 600; }
+  .publication-archive,.member-page { width: calc(100% - 32px); }
+  .publication-body h3 { font-size: 17px; }
+  .team-page { width: calc(100% - 28px); margin-top: 24px; }
+  .team-page-heading { display: block; margin-bottom: 24px; }
+  .team-page-heading h1 { font-size: 28px; }
+  .team-page-heading > p { margin-top: 5px; font-size: 15px; }
+  .faculty-directory-card { grid-template-columns: 95px minmax(0,1fr); gap: 17px; padding: 18px; }
+  .faculty-directory-portrait { width: 95px; height: 125px; }
+  .faculty-directory-copy h3 { font-size: 25px; }
+  .faculty-directory-bio { font-size: 16px; line-height: 1.85; }
+  .faculty-directory-copy .faculty-role { font-size: 14px; }
+  .faculty-directory-topics { gap: 6px; }
+  .faculty-directory-topics li { padding: 2px 7px; font-size: 13px; }
+  .faculty-directory-copy .faculty-links,.faculty-directory-copy .faculty-email { font-size: 14px; }
+  .team-page .student-degree-group { grid-template-columns: 1fr; gap: 17px; }
+  .team-page .student-roster { gap: 17px; }
+  .footer-inner { width: calc(100% - 32px); flex-wrap: wrap; font-size: 13px; }
+}
+@media(max-width:360px) {
+  .brand img { width: 36px; height: 36px; }
+  .brand { gap: 7px; }
+  .brand .brand-title { font-size: 14px; }
+  .brand .brand-university { font-size: 12px; }
+  .header-inner { gap: 6px; }
+  .faculty-directory-card { grid-template-columns: 80px minmax(0,1fr); padding: 14px; gap: 13px; }
+  .faculty-directory-portrait { width: 80px; height: 106px; }
+}
