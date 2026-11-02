@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+<title id="title">MSIP</title><desc id="desc">取自 MSIP 字标的 P 眼形图标</desc>
+<g transform="translate(10 3) scale(.9)" fill="#193a50">
+<path d="M0 2H27Q52 2 52 22Q52 42 27 42H14V58H0Z"/>
+<path d="M14 22Q26 7 39 22Q26 36 14 22Z" fill="white"/>
+<circle cx="26" cy="22" r="5" fill="#1b7180"/>
+</g></svg>

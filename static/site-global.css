@@ -2,14 +2,15 @@
 body { --ink: #193a50; --muted: #597083; --accent: #1b7180; --line: #dbe4ec; --cream: #f6f8fb; --design-review-height: 0px; color: var(--ink); background: var(--cream); }
 html { scroll-padding-top: 108px; }
 .site-header,body[class*="design-"] .site-header { top: var(--design-review-height); border-top: 0; border-bottom: 1px solid var(--line); background: #fffffff5; backdrop-filter: blur(14px); }
-.header-inner { width: min(1760px,calc(100% - 64px)); min-height: 88px; gap: 28px; }
-.brand { min-width: 0; gap: 13px; }
-.brand img { width: 53px; height: 53px; object-fit: contain; }
-.brand .brand-wordmark { display: grid; gap: 3px; min-width: 0; }
-.brand .brand-university { display: block; color: #557184; font: 14px/1.5 var(--sans); letter-spacing: .12em; }
+.header-inner { width: min(1760px,calc(100% - 64px)); min-height: 104px; gap: 28px; }
+.brand { min-width: 0; gap: 18px; }
+.brand .brand-msip { width: 150px; height: 48px; flex: 0 0 auto; object-fit: contain; }
+.brand .brand-wordmark { display: grid; gap: 2px; min-width: 0; padding-left: 18px; border-left: 1px solid #d6e2e8; }
+.brand .brand-university { display: block; color: #6a7d8c; font: 400 13px/1.5 var(--sans); letter-spacing: .1em; }
 .brand .brand-title { font-size: 19px; color: #193a50; line-height: 1.5; font-weight: 650; letter-spacing: .015em; }
-.site-nav { display: flex; gap: 32px; flex-shrink: 0; font-size: 16px; }
-.site-nav a { padding-block: 29px 26px; border-bottom: 3px solid transparent; }
+.brand .brand-english { display: block; max-width: none; color: #567486; font: 400 14px/1.55 var(--sans); letter-spacing: .01em; }
+.site-nav { display: flex; align-self: stretch; align-items: stretch; gap: 32px; flex-shrink: 0; font-size: 16px; }
+.site-nav a { display: flex; align-items: center; padding-block: 0; border-bottom: 3px solid transparent; }
 .site-nav a[aria-current="page"],.site-nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 .nav-toggle { display: none; }
 .text-link,.publication-links { color: var(--accent); }
@@ -85,21 +86,24 @@ footer { border-top: 1px solid var(--line); background: white; }
 .footer-inner p { color: #61798a; }
 @media(max-width:980px) {
   .header-inner { width: calc(100% - 40px); gap: 18px; }
-  .brand .brand-title { font-size: 17px; }
+  .brand .brand-title { font-size: 19px; }
   .site-nav { gap: 22px; font-size: 15px; }
   .team-page { width: calc(100% - 40px); }
   .team-page .student-degree-group { grid-template-columns: 125px 1fr; gap: 20px; }
   .team-page .student-roster { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
 @media(max-width:760px) {
-  .header-inner { width: calc(100% - 28px); min-height: 82px; gap: 12px; }
-  .brand { gap: 10px; }
-  .brand img { width: 43px; height: 43px; }
-  .brand .brand-title { font-size: 16px; letter-spacing: 0; line-height: 1.5; }
-  .brand .brand-university { font-size: 13px; letter-spacing: .06em; }
-  .nav-toggle { display: grid; flex-shrink: 0; place-content: center; gap: 6px; width: 40px; min-width: 40px; min-height: 44px; padding: 8px; color: var(--ink); background: none; border: 0; }
+  html { scroll-padding-top: 148px; }
+  .header-inner { position: relative; width: calc(100% - 28px); min-height: 120px; gap: 12px; }
+  .brand { display: grid; grid-template-columns: 132px minmax(0,1fr); flex: 1 1 auto; width: 100%; gap: 2px 12px; padding: 10px 0; }
+  .brand .brand-msip { grid-column: 1; grid-row: 1; width: 132px; height: 42.24px; }
+  .brand .brand-wordmark { display: contents; padding: 0; border: 0; }
+  .brand .brand-title { grid-column: 1 / -1; grid-row: 2; font-size: 17px; letter-spacing: 0; line-height: 1.5; text-wrap: pretty; }
+  .brand .brand-university { grid-column: 2; grid-row: 1; margin-right: 52px; font-size: 13px; letter-spacing: .04em; white-space: nowrap; }
+  .brand .brand-english { grid-column: 1 / -1; grid-row: 3; font-size: 14px; line-height: 1.6; letter-spacing: 0; white-space: normal; text-wrap: pretty; }
+  .nav-toggle { position: absolute; top: 12px; right: 0; display: grid; flex-shrink: 0; place-content: center; gap: 6px; width: 40px; min-width: 40px; min-height: 44px; padding: 8px; color: var(--ink); background: none; border: 0; }
   .nav-toggle span { display: block; width: 23px; height: 2px; background: currentColor; }
-  .site-nav { position: absolute; inset: 100% 0 auto; display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 24px 16px; border-bottom: 1px solid var(--line); background: white; box-shadow: 0 12px 18px #193a500b; font-size: 16px; }
+  .site-nav { position: absolute; inset: 100% -14px auto; display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 24px 16px; border-bottom: 1px solid var(--line); background: white; box-shadow: 0 12px 18px #193a500b; font-size: 16px; }
   .site-nav.open { display: flex; }
   .site-nav a { padding: 12px 0; border-bottom: 1px solid #e2e9ef; }
   .site-nav a[aria-current="page"] { border-bottom: 1px solid var(--accent); font-weight: 600; }
@@ -126,10 +130,10 @@ footer { border-top: 1px solid var(--line); background: white; }
   .footer-inner { width: calc(100% - 32px); flex-wrap: wrap; font-size: 13px; }
 }
 @media(max-width:360px) {
-  .brand img { width: 36px; height: 36px; }
-  .brand { gap: 7px; }
-  .brand .brand-title { font-size: 14px; }
-  .brand .brand-university { font-size: 12px; }
+  .brand { grid-template-columns: 118px minmax(0,1fr); gap: 2px 10px; }
+  .brand .brand-msip { width: 118px; height: 37.76px; }
+  .brand .brand-title { font-size: 17px; }
+  .brand .brand-university { font-size: 13px; }
   .header-inner { gap: 6px; }
   .faculty-directory-card { grid-template-columns: 80px minmax(0,1fr); padding: 14px; gap: 13px; }
   .faculty-directory-portrait { width: 80px; height: 106px; }
