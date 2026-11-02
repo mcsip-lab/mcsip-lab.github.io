@@ -141,7 +141,6 @@ body[class*="design-"] [id] { scroll-margin-top: var(--design-review-height); }
 .publication-links { justify-self: end; }
 .publication-links { display: flex; flex-direction: column; }
 .publication-links .code-link { color: #87515b; }
-.publication-meta .paper-status { display: inline-block; margin-top: 8px; padding: 2px 6px; color: #83525b; background: #f7eff1; font-size: 14px; }
 .archive-paper-figure { margin: 12px 0 0; }
 .archive-paper-figure img { width: auto; max-height: 400px; }
 .archive-paper-figure figcaption { margin-top: 8px; color: #5d6e7c; font-size: 14px; }

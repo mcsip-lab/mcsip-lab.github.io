@@ -41,7 +41,15 @@ html { scroll-padding-top: 108px; }
 .research-detail section p { font-size: 17px; line-height: 1.95; color: #456174; }
 .research-detail-reference { margin-block: 28px; padding-top: 17px; border-top: 1px solid var(--line); color: #62798b; font-size: 15px; }
 .research-detail-reference p { margin-block: 6px; }
-.paper-status { display: inline-block; color: #236b78; background: #e6f2f4; border-radius: 4px; padding: 1px 7px; font-size: 13px; white-space: nowrap; }
+.paper-status,
+.publication-meta .paper-status,
+.work-venue .paper-status,
+.research-detail-venue .paper-status {
+  display: inline-block; max-width: 100%; margin: 0; padding: 2px 7px;
+  border: 1px solid #c9e0e5; border-radius: 4px;
+  color: #236b78; background: #e6f2f4;
+  font: 500 14px/1.5 var(--sans); white-space: normal; vertical-align: middle;
+}
 .team-page { width: min(1440px,calc(100% - 64px)); margin: 34px auto 44px; }
 .team-page > .container { width: 100%; margin-inline: 0; }
 .team-page-heading { margin-bottom: 28px; display: flex; gap: 18px; align-items: baseline; }
