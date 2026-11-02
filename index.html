@@ -7,9 +7,9 @@
   <meta name="theme-color" content="#203449">
   <title>多媒体内容安全与智能感知实验室</title>
   <link rel="icon" href="/static/images/lab-mark-integrated.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/static/style.css?v=20261102b">
-  <link rel="stylesheet" href="/static/design-integrated.css?v=20261102b">
-  <link rel="stylesheet" href="/static/site-global.css?v=20261102b">
+  <link rel="stylesheet" href="/static/style.css?v=20261102c">
+  <link rel="stylesheet" href="/static/design-integrated.css?v=20261102c">
+  <link rel="stylesheet" href="/static/site-global.css?v=20261102c">
 </head>
 <body id="top" class="design-integrated">
   <a class="skip-link" href="#main-content">跳转至主要内容</a>
@@ -108,22 +108,11 @@
     </div>
   </section>
 
-    <section class="research-section container" id="research" aria-labelledby="research-title">
-    <div class="compact-heading"><h2 id="research-title">研究领域 <span lang="en">Research</span></h2></div>
-    <div class="research-pillars">
-      <article class="research-pillar security-pillar"><div class="pillar-heading"><span class="pillar-number">01</span><div><h3>多媒体内容安全</h3><p lang="en">Multimedia Content Security</p></div></div>
-        <p class="pillar-definition">研究图像、视频与生成内容的<strong>来源、完整性和版权保护</strong>：为内容嵌入可验证标识，分析伪造与篡改痕迹，并研究加密媒体的处理方法。</p>
-        <dl class="research-questions"><div><dt>数字水印与内容溯源</dt><dd>生成内容标识、鲁棒与可逆水印、模型版权验证。</dd></div><div><dt>多媒体取证与篡改分析</dt><dd>深度伪造检测、篡改定位、视频编辑与转码痕迹分析。</dd></div><div><dt>加密媒体处理</dt><dd>加密图像的压缩、传输与重构。</dd></div></dl>
-      </article>
-      <article class="research-pillar perception-pillar"><div class="pillar-heading"><span class="pillar-number">02</span><div><h3>智能感知</h3><p lang="en">Intelligent Perception</p></div></div>
-        <p class="pillar-definition">研究如何从图像、视频与深度数据中<strong>识别类别、定位目标并估计生物特征</strong>。面向农业场景，开展害虫与植株检测、动物行为识别、视觉计数和体重估计。</p>
-        <dl class="research-questions"><div><dt>农业目标识别与检测</dt><dd>开放世界害虫分类、害虫与番茄植株检测。</dd></div><div><dt>动物视觉分析</dt><dd>RGB-D 非接触体重估计、养殖动物行为识别。</dd></div><div><dt>视觉计数与监测</dt><dd>密集害虫计数、农业目标的自动监测。</dd></div></dl>
-      </article>
-    </div>
-  </section>
-  <section class="featured-section container" id="selected-work" aria-labelledby="selected-title">
+  <div class="research-desk">
+    <section class="featured-section container" id="selected-work" aria-labelledby="selected-title">
   <div class="compact-heading"><h2 id="selected-title">代表性工作 <span lang="en">Selected research · 6</span></h2></div>
   <div class="featured-grid">
+    
     
     <article class="featured-work">
       
@@ -139,19 +128,21 @@
       </div>
     </article>
     
+    
     <article class="featured-work">
       
-      <figure class="work-figure"><a href="/static/images/papers/genptw-method.webp" target="_blank" rel="noopener noreferrer" aria-label="查看GenPTW · 生成图像溯源与篡改定位的论文原图"><img src="/static/images/papers/genptw-method.webp" alt="GenPTW 潜空间水印融合、提取与篡改定位框架" width="760" height="320" loading="lazy"></a></figure>
+      <figure class="work-figure"><a href="/static/images/papers/giernet-method.webp" target="_blank" rel="noopener noreferrer" aria-label="查看GIER-Net · 换脸后身份恢复的论文原图"><img src="/static/images/papers/giernet-method.webp" alt="GIER-Net 原论文图1：保护、换脸攻击和身份恢复三阶段" width="760" height="320" loading="lazy"></a></figure>
       
       <div class="work-content">
-        <p class="work-topic">多媒体内容安全 · 生成内容溯源</p>
-        <p class="work-venue">AAAI · 2026</p>
-        <h3>GenPTW · 生成图像溯源与篡改定位</h3>
-        <p class="work-summary">在生成模型的潜空间融合语义与空间水印信息，同时完成生成图像的来源追踪和编辑区域定位。</p>
-        <div class="work-citation"><p class="work-paper-title" lang="en">GenPTW: Latent Image Watermarking for Provenance Tracing and Tamper Localization</p><p class="work-authors">Zhenliang Gan; Chunya Liu; Yichao Tang; Binghao Wang; Shiwen Cui; Weiqiang Wang; Xinpeng Zhang</p></div>
-        <div class="work-links"><a href="https://doi.org/10.1609/aaai.v40i5.37412" target="_blank" rel="noopener noreferrer">论文 ↗</a><a class="code-link" href="https://github.com/GanZhenliang/GenPTW" target="_blank" rel="noopener noreferrer">代码 ↗</a></div>
+        <p class="work-topic">多媒体内容安全 · 换脸后身份恢复</p>
+        <p class="work-venue">ACM Multimedia · 2026 <span class="paper-status">已录用</span></p>
+        <h3>GIER-Net · 换脸后身份恢复</h3>
+        <p class="work-summary">在图像发布前以可逆潜空间编码保留身份线索，结合攻击感知校正，在换脸与压缩后重建具有原始身份特征的人脸图像。</p>
+        <div class="work-citation"><p class="work-paper-title" lang="en">GIER-Net: Generative Identity Encoding for Robust Original Identity Restoration from Face-Swapped Images</p><p class="work-authors">Huaquan Yang; Shan Bian; Gongwei Weng; Chuntao Wang</p></div>
+        <div class="work-links"><a href="/works/gier-net/">研究详情 →</a></div>
       </div>
     </article>
+    
     
     <article class="featured-work">
       
@@ -167,6 +158,7 @@
       </div>
     </article>
     
+    
     <article class="featured-work">
       
       <figure class="work-figure"><a href="/static/images/papers/enriched-extra-ufnet-figure1.webp" target="_blank" rel="noopener noreferrer" aria-label="查看UfNet · 深度模型黑盒指纹的论文原图"><img src="/static/images/papers/enriched-extra-ufnet-figure1.webp" alt="UfNet通过携带用户指纹的图像训练分类模型，并在测试阶段验证模型指纹的整体框架" width="760" height="320" loading="lazy"></a></figure>
@@ -181,6 +173,7 @@
       </div>
     </article>
     
+    
     <article class="featured-work">
       
       <figure class="work-figure"><a href="/static/images/papers/enriched-swinpest-figure2.webp" target="_blank" rel="noopener noreferrer" aria-label="查看Swin Transformer 多标签害虫识别的论文原图"><img src="/static/images/papers/enriched-swinpest-figure2.webp" alt="Swin害虫识别原论文图2：普通二元交叉熵与软二元交叉熵的两阶段训练过程" width="760" height="320" loading="lazy"></a></figure>
@@ -194,6 +187,7 @@
         <div class="work-links"><a href="https://doi.org/10.1016/j.engappai.2023.107060" target="_blank" rel="noopener noreferrer">论文 ↗</a></div>
       </div>
     </article>
+    
     
     <article class="featured-work">
       
@@ -211,10 +205,20 @@
     
   </div>
 </section>
-  <section class="recent-publications container" id="publications" aria-labelledby="publications-title">
-  <div class="compact-heading"><h2 id="publications-title">近期成果 <span>近一年 · <span data-recent-count>14</span> 篇</span></h2></div>
-  <div class="recent-scroll" data-recent-scroll role="region" aria-label="近一年 14 篇论文">
+    <section class="recent-publications container" id="publications" aria-labelledby="publications-title">
+  <div class="compact-heading"><h2 id="publications-title">近期成果 <span>近一年 · <span data-recent-count>15</span> 篇</span></h2></div>
+  <div class="recent-browse-controls" data-recent-controls hidden><span data-recent-position aria-live="polite"></span><div><button type="button" data-recent-up aria-label="向上浏览近期成果">↑</button><button type="button" data-recent-down aria-label="向下浏览近期成果">↓</button></div></div>
+  <div class="recent-scroll" data-recent-scroll role="region" tabindex="0" aria-label="近一年 15 篇论文">
     <div class="publication-list recent-grid">
+      
+      
+      <article class="publication-row recent-paper" id="paper-author-gier-net-acmmm-2026" data-published-from="2026-11-02">
+        <div class="publication-meta"><time>2026</time><span>ACM Multimedia</span><span class="paper-status">已录用</span></div>
+        <h3>GIER-Net: Generative Identity Encoding for Robust Original Identity Restoration from Face-Swapped Images</h3>
+        <p class="authors">Huaquan Yang; Shan Bian; Gongwei Weng; Chuntao Wang</p>
+        <div class="publication-links"><a href="/works/gier-net/" aria-label="查看研究详情：GIER-Net: Generative Identity Encoding for Robust Original Identity Restoration from Face-Swapped Images">研究详情 →</a></div>
+      </article>
+      
       
       <article class="publication-row recent-paper" id="paper-verified-jpeg-global-local-rrw-2026" data-published-from="2026-10-21">
         <div class="publication-meta"><time>2026</time><span>计算机应用</span></div>
@@ -223,12 +227,14 @@
         <div class="publication-links"><a href="https://www.joca.cn/CN/10.11772/j.issn.1001-9081.2026091086" target="_blank" rel="noopener noreferrer" aria-label="阅读论文：全局-局部统计特征与攻击驱动载体选择的JPEG鲁棒可逆水印">论文 ↗</a></div>
       </article>
       
+      
       <article class="publication-row recent-paper" id="paper-verified-forgery-aware-clip-2027" data-published-from="2026-09-25">
         <div class="publication-meta"><time>2026</time><span>Expert Systems with Applications</span></div>
         <h3>Forgery-aware CLIP adaptation via attention modulation with conditional gating for deepfake detection</h3>
         <p class="authors">Yue Cheng; Shan Bian; Lin Li; Jianlin Zhang; Xiaofeng Xie; Chuntao Wang</p>
         <div class="publication-links"><a href="https://www.sciencedirect.com/science/article/pii/S0957417426033981" target="_blank" rel="noopener noreferrer" aria-label="阅读论文：Forgery-aware CLIP adaptation via attention modulation with conditional gating for deepfake detection">论文 ↗</a></div>
       </article>
+      
       
       <article class="publication-row recent-paper" id="paper-verified-m3d-net-deepfake-preprint-2026" data-published-from="2026-09-21">
         <div class="publication-meta"><time>2026</time><span>Applied Soft Computing</span></div>
@@ -237,12 +243,14 @@
         <div class="publication-links"><a href="https://doi.org/10.1016/j.asoc.2026.116500" target="_blank" rel="noopener noreferrer" aria-label="阅读论文：M3D-net: Multi-modal 3D facial feature reconstruction network for deepfake detection">论文 ↗</a></div>
       </article>
       
+      
       <article class="publication-row recent-paper" id="paper-verified-tp-duck-text-prompts-2026" data-published-from="2026-09-01">
         <div class="publication-meta"><time>2026</time><span>Computers and Electronics in Agriculture</span></div>
         <h3>TP-Duck: A cage-reared duck behavior recognition model with lightweight interaction mechanism and text prompts</h3>
         <p class="authors">Gen Zhang; Chuntao Wang; Deqin Xiao</p>
         <div class="publication-links"><a href="https://doi.org/10.1016/j.compag.2026.112083" target="_blank" rel="noopener noreferrer" aria-label="阅读论文：TP-Duck: A cage-reared duck behavior recognition model with lightweight interaction mechanism and text prompts">论文 ↗</a></div>
       </article>
+      
       
       <article class="publication-row recent-paper" id="paper-verified-tfpdd-proactive-deepfake-2026" data-published-from="2026-05-01">
         <div class="publication-meta"><time>2026</time><span>Expert Systems with Applications</span></div>
@@ -251,12 +259,14 @@
         <div class="publication-links"><a href="https://doi.org/10.1016/j.eswa.2026.131126" target="_blank" rel="noopener noreferrer" aria-label="阅读论文：A new robust training-free proactive deepfake detection scheme using watermarking and identity-aware hashing">论文 ↗</a><a class="code-link" href="https://github.com/Laizhm/TFPDD" target="_blank" rel="noopener noreferrer" aria-label="查看代码：A new robust training-free proactive deepfake detection scheme using watermarking and identity-aware hashing">代码 ↗</a></div>
       </article>
       
+      
       <article class="publication-row recent-paper" id="paper-40" data-published-from="2026-03-14">
         <div class="publication-meta"><time>2026</time><span>AAAI</span></div>
         <h3>GenPTW: Latent Image Watermarking for Provenance Tracing and Tamper Localization</h3>
         <p class="authors">Zhenliang Gan; Chunya Liu; Yichao Tang; Binghao Wang; Shiwen Cui; Weiqiang Wang; Xinpeng Zhang</p>
         <div class="publication-links"><a href="https://doi.org/10.1609/aaai.v40i5.37412" target="_blank" rel="noopener noreferrer" aria-label="阅读论文：GenPTW: Latent Image Watermarking for Provenance Tracing and Tamper Localization">论文 ↗</a><a class="code-link" href="https://github.com/GanZhenliang/GenPTW" target="_blank" rel="noopener noreferrer" aria-label="查看代码：GenPTW: Latent Image Watermarking for Provenance Tracing and Tamper Localization">代码 ↗</a></div>
       </article>
+      
       
       <article class="publication-row recent-paper" id="paper-17" data-published-from="2026-02-16">
         <div class="publication-meta"><time>2026</time><span>Applied Intelligence</span></div>
@@ -265,12 +275,14 @@
         <div class="publication-links"><a href="https://doi.org/10.1007/s10489-026-07134-z" target="_blank" rel="noopener noreferrer" aria-label="阅读论文：Detection of transcoding from HEVC to VVC based on CU types and Motion Vector Map">论文 ↗</a></div>
       </article>
       
+      
       <article class="publication-row recent-paper" id="paper-verified-qs-qim-rrw-2026" data-published-from="2026-01-01">
         <div class="publication-meta"><time>2026</time><span>IEEE Transactions on Information Forensics and Security</span></div>
         <h3>A Two-Stage Robust Reversible Image Watermarking Scheme Using 2D Lattice QIM With Quantization Strips</h3>
         <p class="authors">Yichao Tang; Zhuangxi Yao; Yingxi Huang; Chuntao Wang; Shijun Xiang</p>
         <div class="publication-links"><a href="https://ieeexplore.ieee.org/document/11753674" target="_blank" rel="noopener noreferrer" aria-label="阅读论文：A Two-Stage Robust Reversible Image Watermarking Scheme Using 2D Lattice QIM With Quantization Strips">论文 ↗</a><a class="code-link" href="https://github.com/yichao-tang/QS-QIM-RRW" target="_blank" rel="noopener noreferrer" aria-label="查看代码：A Two-Stage Robust Reversible Image Watermarking Scheme Using 2D Lattice QIM With Quantization Strips">代码 ↗</a></div>
       </article>
+      
       
       <article class="publication-row recent-paper" id="paper-verified-high-low-frequency-video-inpainting-2027" data-published-from="2026-01-01">
         <div class="publication-meta"><time>2026</time><span>Expert Systems with Applications</span></div>
@@ -279,12 +291,14 @@
         <div class="publication-links"><a href="https://www.sciencedirect.com/science/article/pii/S0957417426023997" target="_blank" rel="noopener noreferrer" aria-label="阅读论文：Detecting the imperceptible: A high-low frequency decoupling network for partial video inpainting forgery detection">论文 ↗</a></div>
       </article>
       
+      
       <article class="publication-row recent-paper" id="paper-verified-fiy4dbr-dynamic-light-duck-2026" data-published-from="2026-01-01">
         <div class="publication-meta"><time>2026</time><span>Engineering Applications of Artificial Intelligence</span></div>
         <h3>Enhanced you only look once model with frequency feature enhancement and illumination perception for duck behavior recognition in dynamic light scenarios</h3>
         <p class="authors">Gen Zhang; Chuntao Wang; Deqin Xiao</p>
         <div class="publication-links"><a href="https://doi.org/10.1016/j.engappai.2025.112889" target="_blank" rel="noopener noreferrer" aria-label="阅读论文：Enhanced you only look once model with frequency feature enhancement and illumination perception for duck behavior recognition in dynamic light scenarios">论文 ↗</a></div>
       </article>
+      
       
       <article class="publication-row recent-paper" id="paper-42" data-published-from="2026-01-01">
         <div class="publication-meta"><time>2026</time><span>IEEE Transactions on Multimedia</span></div>
@@ -293,6 +307,7 @@
         <div class="publication-links"><a href="https://doi.org/10.1109/TMM.2025.3623522" target="_blank" rel="noopener noreferrer" aria-label="阅读论文：A Novel Robust Reversible Watermarking Scheme Using Fractional-Order Polar Complex Exponential Transform">论文 ↗</a><a class="code-link" href="https://github.com/yichao-tang/FrPCET-RRW" target="_blank" rel="noopener noreferrer" aria-label="查看代码：A Novel Robust Reversible Watermarking Scheme Using Fractional-Order Polar Complex Exponential Transform">代码 ↗</a></div>
       </article>
       
+      
       <article class="publication-row recent-paper" id="paper-39" data-published-from="2026-01-01">
         <div class="publication-meta"><time>2026</time><span>IEEE ICASSP</span></div>
         <h3>DNLMark: Dual Noise Layer-Based Robust Watermarking Against Image Editing</h3>
@@ -300,12 +315,14 @@
         <div class="publication-links"><a href="https://ieeexplore.ieee.org/document/11464215" target="_blank" rel="noopener noreferrer" aria-label="阅读论文：DNLMark: Dual Noise Layer-Based Robust Watermarking Against Image Editing">论文 ↗</a><a class="code-link" href="https://github.com/yichao-tang/DNLMark" target="_blank" rel="noopener noreferrer" aria-label="查看代码：DNLMark: Dual Noise Layer-Based Robust Watermarking Against Image Editing">代码 ↗</a></div>
       </article>
       
+      
       <article class="publication-row recent-paper" id="paper-verified-wang-10-1016-j-atech-2025-101414" data-published-from="2025-12-01">
         <div class="publication-meta"><time>2025</time><span>Smart Agricultural Technology</span></div>
         <h3>CD-ViT-YOLO: A lightweight Hybrid ViT-YOLO model for caged duck behaviour recognition under varying lighting conditions</h3>
         <p class="authors">Yujin Gong; Gen Zhang; Chuntao Wang; Deqin Xiao</p>
         <div class="publication-links"><a href="https://doi.org/10.1016/j.atech.2025.101414" target="_blank" rel="noopener noreferrer" aria-label="阅读论文：CD-ViT-YOLO: A lightweight Hybrid ViT-YOLO model for caged duck behaviour recognition under varying lighting conditions">论文 ↗</a></div>
       </article>
+      
       
       <article class="publication-row recent-paper" id="paper-16" data-published-from="2025-11-14">
         <div class="publication-meta"><time>2025</time><span>IEEE TrustCom</span></div>
@@ -317,8 +334,9 @@
     </div>
     <p class="empty" data-recent-empty hidden>近一年暂无新增论文。</p>
   </div>
-  <div class="archive-entry"><a class="outline-button button" href="/publications/">浏览与检索全部 91 篇论文 <span aria-hidden="true">→</span></a></div>
+  <div class="archive-entry"><a class="outline-button button" href="/publications/">全部 92 篇论文 <span aria-hidden="true">→</span></a></div>
 </section>
+  </div>
 
   <div class="home-contact container"><p>学术合作与科研参与，请联系相关教师。</p><a href="/team/#join">联系方式与加入 →</a></div>
 </main>
@@ -326,6 +344,6 @@
 <footer><div class="container footer-inner"><p>© 2026 华南农业大学 · 多媒体内容安全与智能感知实验室</p><a href="#top">返回顶部 ↑</a></div></footer>
 
   <script src="/static/research-time.js?v=20261102"></script>
-  <script src="/static/main.js?v=20261102b"></script>
+  <script src="/static/main.js?v=20261102c"></script>
 </body>
 </html>
