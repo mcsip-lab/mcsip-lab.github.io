@@ -152,6 +152,7 @@ body[class*="design-"] [id] { scroll-margin-top: var(--design-review-height); }
 .publication-links a:hover { text-decoration: underline; }
 .recent-scroll { max-height: 1120px; overflow-y: auto; scrollbar-gutter: stable; scrollbar-width: auto; scrollbar-color: #8baaa2 #edf3ef; }
 .recent-scroll .publication-list { padding-right: 10px; }
+.recent-scroll .publication-row[hidden], .recent-scroll [data-recent-empty][hidden] { display: none; }
 .recent-browse-controls { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-block: 10px; color: #536c69; font-size: 14px; }
 .recent-browse-controls[hidden] { display: none; }
 .recent-browse-controls > div { display: flex; gap: 7px; }

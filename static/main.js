@@ -79,7 +79,8 @@ document.querySelectorAll('.recent-publications').forEach((section) => {
   const previous = controls.querySelector('[data-recent-up]');
   const next = controls.querySelector('[data-recent-down]');
   const position = controls.querySelector('[data-recent-position]');
-  const rows = [...viewport.querySelectorAll('.publication-row')];
+  const allRows = [...viewport.querySelectorAll('.publication-row')];
+  let rows = allRows;
   const update = () => {
     const bounds = viewport.getBoundingClientRect();
     const visible = rows.map((row, index) => ({ bounds: row.getBoundingClientRect(), index }))
@@ -102,5 +103,21 @@ document.querySelectorAll('.recent-publications').forEach((section) => {
   viewport.addEventListener('toggle', update, true);
   window.addEventListener('resize', update);
   if ('ResizeObserver' in window) new ResizeObserver(update).observe(viewport.querySelector('.publication-list'));
-  update();
+  let reviewedDay;
+  const refreshWindow = () => {
+    const dates = window.McsipResearchDates;
+    if (!dates) { update(); return; }
+    const today = dates.shanghaiDay();
+    if (today === reviewedDay) return;
+    reviewedDay = today;
+    allRows.forEach((row) => { row.hidden = !dates.isWithinLastYear(row.dataset.publishedFrom, today); });
+    rows = allRows.filter((row) => !row.hidden);
+    viewport.setAttribute('aria-label', `近一年 ${rows.length} 篇论文`);
+    const empty = section.querySelector('[data-recent-empty]');
+    if (empty) empty.hidden = rows.length > 0;
+    update();
+  };
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) refreshWindow(); });
+  window.setInterval(refreshWindow, 3600000);
+  refreshWindow();
 });
