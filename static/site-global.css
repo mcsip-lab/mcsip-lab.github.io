@@ -71,11 +71,13 @@ html { scroll-padding-top: 108px; }
 .team-page .student-degree-group { display: grid; grid-template-columns: 160px 1fr; gap: 28px; padding: 22px 0; border-bottom: 1px solid var(--line); }
 .student-degree-group h3 { margin: 0; font-size: 20px; }
 .student-degree-group h3 span { display: block; font-size: 14px; font-weight: 400; color: var(--muted); }
+.team-page .student-degree-group > h3 { display: block; white-space: nowrap; }
 .team-page .student-roster { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 15px 26px; }
 .student-roster-entry { display: flex; flex-direction: column; min-width: 0; }
 .student-roster-entry strong { font-size: 17px; font-weight: 600; }
 .student-roster-entry > span { font-size: 15px; color: var(--muted); }
 .team-page .participation-section { padding: 0; margin-top: 35px; }
+.team-page .contact-copy { max-width: none; text-wrap: pretty; }
 .contact-copy p { color: #486476; font-size: 17px; line-height: 1.95; }
 .section-caption { font-size: 14px; color: var(--muted); }
 footer { border-top: 1px solid var(--line); background: white; }
