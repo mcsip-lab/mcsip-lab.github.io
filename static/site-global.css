@@ -4,12 +4,12 @@ html { scroll-padding-top: 108px; }
 .site-header,body[class*="design-"] .site-header { top: var(--design-review-height); border-top: 0; border-bottom: 1px solid var(--line); background: #fffffff5; backdrop-filter: blur(14px); }
 .header-inner { width: min(1760px,calc(100% - 64px)); min-height: 104px; gap: 28px; }
 .brand { min-width: 0; gap: 18px; }
-.brand .brand-msip { width: 150px; height: 48px; flex: 0 0 auto; object-fit: contain; }
+.brand .brand-msip { width: 176px; height: 44px; flex: 0 0 auto; object-fit: contain; }
 .brand .brand-wordmark { display: grid; gap: 2px; min-width: 0; padding-left: 18px; border-left: 1px solid #d6e2e8; }
-.brand .brand-university { display: block; color: #6a7d8c; font: 400 13px/1.5 var(--sans); letter-spacing: .1em; }
+.brand .brand-university { display: block; color: #5d7282; font: 400 13px/1.5 var(--sans); letter-spacing: .1em; }
 .brand .brand-title { font-size: 19px; color: #193a50; line-height: 1.5; font-weight: 650; letter-spacing: .015em; }
 .brand .brand-english { display: block; max-width: none; color: #567486; font: 400 14px/1.55 var(--sans); letter-spacing: .01em; }
-.site-nav { display: flex; align-self: stretch; align-items: stretch; gap: 32px; flex-shrink: 0; font-size: 16px; }
+.site-nav { position: static; display: flex; align-self: stretch; align-items: stretch; gap: 32px; flex-shrink: 0; padding: 0; border: 0; box-shadow: none; font-size: 16px; }
 .site-nav a { display: flex; align-items: center; padding-block: 0; border-bottom: 3px solid transparent; }
 .site-nav a[aria-current="page"],.site-nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 .nav-toggle { display: none; }
@@ -92,11 +92,11 @@ footer { border-top: 1px solid var(--line); background: white; }
   .team-page .student-degree-group { grid-template-columns: 125px 1fr; gap: 20px; }
   .team-page .student-roster { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
-@media(max-width:760px) {
+@media(max-width:860px) {
   html { scroll-padding-top: 148px; }
   .header-inner { position: relative; width: calc(100% - 28px); min-height: 120px; gap: 12px; }
-  .brand { display: grid; grid-template-columns: 132px minmax(0,1fr); flex: 1 1 auto; width: 100%; gap: 2px 12px; padding: 10px 0; }
-  .brand .brand-msip { grid-column: 1; grid-row: 1; width: 132px; height: 42.24px; }
+  .brand { display: grid; grid-template-columns: 140px minmax(0,1fr); flex: 1 1 auto; width: 100%; gap: 2px 12px; padding: 10px 0; }
+  .brand .brand-msip { grid-column: 1; grid-row: 1; width: 140px; height: 35px; }
   .brand .brand-wordmark { display: contents; padding: 0; border: 0; }
   .brand .brand-title { grid-column: 1 / -1; grid-row: 2; font-size: 17px; letter-spacing: 0; line-height: 1.5; text-wrap: pretty; }
   .brand .brand-university { grid-column: 2; grid-row: 1; margin-right: 52px; font-size: 13px; letter-spacing: .04em; white-space: nowrap; }
@@ -107,6 +107,8 @@ footer { border-top: 1px solid var(--line); background: white; }
   .site-nav.open { display: flex; }
   .site-nav a { padding: 12px 0; border-bottom: 1px solid #e2e9ef; }
   .site-nav a[aria-current="page"] { border-bottom: 1px solid var(--accent); font-weight: 600; }
+}
+@media(max-width:760px) {
   .publication-archive,.member-page { width: calc(100% - 32px); }
   .research-detail { width: calc(100% - 32px); margin-top: 25px; }
   .research-detail-figure { padding: 10px; }
@@ -130,8 +132,8 @@ footer { border-top: 1px solid var(--line); background: white; }
   .footer-inner { width: calc(100% - 32px); flex-wrap: wrap; font-size: 13px; }
 }
 @media(max-width:360px) {
-  .brand { grid-template-columns: 118px minmax(0,1fr); gap: 2px 10px; }
-  .brand .brand-msip { width: 118px; height: 37.76px; }
+  .brand { grid-template-columns: 128px minmax(0,1fr); gap: 2px 10px; }
+  .brand .brand-msip { width: 128px; height: 32px; }
   .brand .brand-title { font-size: 17px; }
   .brand .brand-university { font-size: 13px; }
   .header-inner { gap: 6px; }

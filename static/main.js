@@ -84,3 +84,55 @@ document.querySelectorAll('.recent-publications').forEach((section) => {
   window.setInterval(refreshWindow, 3600000);
   refreshWindow();
 });
+
+document.querySelectorAll('.home-news').forEach((section) => {
+  const region = section.querySelector('[data-news-window]');
+  const list = region?.querySelector('.news-list');
+  if (!list) return;
+  const rows = [...list.querySelectorAll('.news-entry')];
+  const controls = section.querySelector('[data-news-controls]');
+  const previous = controls?.querySelector('[data-news-up]');
+  const next = controls?.querySelector('[data-news-down]');
+  const updateButtons = () => {
+    previous.disabled = region.scrollTop <= 2;
+    next.disabled = region.scrollTop + region.clientHeight >= region.scrollHeight - 2;
+  };
+  const fitThreeRows = () => {
+    const visible = rows.filter(row => !row.hidden);
+    const overflow = visible.length > 3;
+    controls.hidden = !overflow;
+    if (overflow) {
+      // Measure the real first three entries, including wrapped mobile text.
+      const first = visible[0].getBoundingClientRect();
+      const third = visible[2].getBoundingClientRect();
+      const height = Math.ceil(third.bottom - first.top + 4);
+      region.style.height = height + 'px';
+    } else {
+      region.style.height = 'auto';
+    }
+    updateButtons();
+  };
+  const refreshNews = () => {
+    const dates = window.McsipResearchDates;
+    const today = dates?.shanghaiDay();
+    rows.forEach(row => {
+      const published = row.dataset.newsPublishedFrom;
+      if (published && dates) {
+        row.hidden = !dates.isWithinLastYear(published, today);
+      }
+    });
+    fitThreeRows();
+  };
+  const browse = direction => region.scrollBy({
+    top: direction * region.clientHeight,
+    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+  });
+  previous?.addEventListener('click', () => browse(-1));
+  next?.addEventListener('click', () => browse(1));
+  region.addEventListener('scroll', updateButtons, {passive: true});
+  window.addEventListener('resize', fitThreeRows);
+  if ('ResizeObserver' in window) new ResizeObserver(fitThreeRows).observe(list);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) refreshNews(); });
+  window.setInterval(refreshNews, 3600000);
+  refreshNews();
+});
