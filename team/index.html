@@ -12,7 +12,7 @@
   <link rel="apple-touch-icon" href="/static/images/brand/mcsip-apple-touch-icon.png">
   <link rel="stylesheet" href="/static/style.css?v=20261102e">
   <link rel="stylesheet" href="/static/design-integrated.css?v=20261105plates">
-  <link rel="stylesheet" href="/static/site-global.css?v=20261105content">
+  <link rel="stylesheet" href="/static/site-global.css?v=20261105topics">
 </head>
 <body id="top" class="design-integrated team-directory">
   <a class="skip-link" href="#main-content">跳转至主要内容</a>
@@ -53,8 +53,8 @@
           <img src="/static/uploads/members/teachers-2-ab336433b8.jpg" alt="王春桃" width="128" height="168" loading="lazy">
         </div>
         <div class="faculty-directory-copy">
-          <h3 id="faculty-name-2">王春桃</h3>
-          <p class="faculty-role">教授 · 博士生导师 · 硕士生导师</p>
+          <div class="faculty-directory-identity"><h3 id="faculty-name-2">王春桃</h3>
+          <p class="faculty-role">教授 · 博士生导师 · 硕士生导师</p></div>
           <p class="faculty-directory-bio">研究多媒体信息安全与农业人工智能，涉及数字水印、信息隐藏和农业视觉识别。</p>
           <div class="faculty-links">
             <a href="/members/teacher/2/">简介与论文 →</a>
@@ -69,8 +69,8 @@
           <img src="/static/uploads/members/teachers-1-27d6a4664f.jpg" alt="边山" width="128" height="168" loading="lazy">
         </div>
         <div class="faculty-directory-copy">
-          <h3 id="faculty-name-1">边山</h3>
-          <p class="faculty-role">副教授 · 硕士生导师</p>
+          <div class="faculty-directory-identity"><h3 id="faculty-name-1">边山</h3>
+          <p class="faculty-role">副教授 · 硕士生导师</p></div>
           <p class="faculty-directory-bio">研究深度伪造检测、图像篡改定位与视频取证，并开展智慧农业相关研究。</p>
           <div class="faculty-links">
             <a href="/members/teacher/1/">简介与论文 →</a>
@@ -85,8 +85,8 @@
           <img src="/static/images/team/yichao-tang-20261104-4c77d1a2.png" alt="汤毅超" width="128" height="168" loading="lazy">
         </div>
         <div class="faculty-directory-copy">
-          <h3 id="faculty-name-3">汤毅超</h3>
-          <p class="faculty-role">首聘副教授</p>
+          <div class="faculty-directory-identity"><h3 id="faculty-name-3">汤毅超</h3>
+          <p class="faculty-role">首聘副教授</p></div>
           <p class="faculty-directory-bio">研究鲁棒水印、可逆信息隐藏与生成式人工智能安全。</p>
           <div class="faculty-links">
             <a href="/members/teacher/3/">简介与论文 →</a>
@@ -186,7 +186,23 @@
 
 <footer><div class="container footer-inner"><p>© 2026 华南农业大学 · 多媒体内容安全与智能感知实验室</p><a href="#top">返回顶部 ↑</a></div></footer>
 
+  <dialog class="paper-image-dialog" aria-labelledby="paper-image-title" aria-describedby="paper-image-caption">
+  <div class="paper-image-toolbar">
+    <h2 id="paper-image-title">论文图示</h2>
+    <div class="paper-image-actions">
+      <button type="button" data-image-size aria-pressed="false" disabled>原始尺寸</button>
+      <button type="button" class="paper-image-close" data-image-close aria-label="关闭大图" autofocus>×</button>
+    </div>
+  </div>
+  <p id="paper-image-caption" class="paper-image-caption"></p>
+  <div class="paper-image-viewport" tabindex="0" aria-label="论文图示，原始尺寸下可滚动查看">
+    <p data-image-loading role="status">正在加载图示…</p>
+    <p data-image-error hidden>图示暂时无法加载，<a data-image-original target="_blank" rel="noopener noreferrer">打开原图 ↗</a></p>
+    <img data-image-full alt="" hidden>
+  </div>
+</dialog>
   <script src="/static/research-time.js?v=20261102"></script>
-  <script src="/static/main.js?v=20261105f"></script>
+  <script src="/static/main.js?v=20261105reading"></script>
+  <script src="/static/paper-image-viewer.js?v=20261105controls"></script>
 </body>
 </html>

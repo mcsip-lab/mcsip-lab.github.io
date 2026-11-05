@@ -8,6 +8,7 @@
   const queryInput = document.getElementById('paper-query');
   const yearInput = document.getElementById('paper-year');
   const kindInput = document.getElementById('paper-kind');
+  const topicInput = document.getElementById('paper-topic');
   const normalize = value => String(value || '').normalize('NFKC').toLocaleLowerCase();
   const entries = JSON.parse(dataElement.textContent).map(item => ({
     ...item, search: normalize(item.search), row: document.getElementById(`paper-${item.id}`),
@@ -31,10 +32,12 @@
     const params = new URLSearchParams(location.search);
     const year = params.get('year') || '';
     const kind = params.get('kind') || '';
+    const topic = params.get('topic') || '';
     return {
       q: (params.get('q') || '').trim().slice(0, 200),
       year: [...yearInput.options].some(option => option.value === year) ? year : '',
       kind: [...kindInput.options].some(option => option.value === kind) ? kind : '',
+      topic: [...topicInput.options].some(option => option.value === topic) ? topic : '',
       page: Math.max(1, Number.parseInt(params.get('page'), 10) || 1),
     };
   }
@@ -44,6 +47,7 @@
     if (next.q) url.searchParams.set('q', next.q);
     if (next.year) url.searchParams.set('year', next.year);
     if (next.kind) url.searchParams.set('kind', next.kind);
+    if (next.topic) url.searchParams.set('topic', next.topic);
     if (next.page > 1) url.searchParams.set('page', next.page);
     return url;
   }
@@ -78,10 +82,12 @@
     queryInput.value = state.q;
     yearInput.value = state.year;
     kindInput.value = state.kind;
+    topicInput.value = state.topic;
     const query = normalize(state.q);
     const matches = entries.filter(item => (!query || item.search.includes(query))
       && (!state.year || String(item.year) === state.year)
-      && (!state.kind || item.kind === state.kind));
+      && (!state.kind || item.kind === state.kind)
+      && (!state.topic || (item.topics || []).includes(state.topic)));
     const pageCount = Math.max(1, Math.ceil(matches.length / pageSize));
     state.page = Math.min(state.page, pageCount);
     const visible = new Set(matches.slice((state.page - 1) * pageSize, state.page * pageSize));
@@ -91,7 +97,7 @@
     const status = document.createElement('p');
     const count = document.createElement('strong');
     count.textContent = matches.length;
-    const filtered = state.q || state.year || state.kind;
+    const filtered = state.q || state.year || state.kind || state.topic;
     status.append(filtered ? '找到 ' : '全部 ', count, ' 篇论文');
     heading.replaceChildren(status);
     if (filtered) {
@@ -100,8 +106,9 @@
       clear.textContent = '清除筛选 ×';
       clear.href = form.action;
       clear.addEventListener('click', event => {
+        if (event.button || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
         event.preventDefault();
-        navigate({ q: '', year: '', kind: '', page: 1 });
+        navigate({ q: '', year: '', kind: '', topic: '', page: 1 });
       });
       heading.append(clear);
     }
@@ -117,11 +124,13 @@
 
   function search(event) {
     event?.preventDefault();
-    navigate({ q: queryInput.value.trim().slice(0, 200), year: yearInput.value, kind: kindInput.value, page: 1 });
+    navigate({ q: queryInput.value.trim().slice(0, 200), year: yearInput.value, kind: kindInput.value,
+      topic: topicInput.value, page: 1 }, event?.type === 'submit');
   }
   form.addEventListener('submit', search);
   yearInput.addEventListener('change', search);
   kindInput.addEventListener('change', search);
+  topicInput.addEventListener('change', search);
   window.addEventListener('popstate', () => { state = readState(); render(); });
   state = readState();
   render();

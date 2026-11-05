@@ -12,7 +12,7 @@
   <link rel="apple-touch-icon" href="/static/images/brand/mcsip-apple-touch-icon.png">
   <link rel="stylesheet" href="/static/style.css?v=20261102e">
   
-  <link rel="stylesheet" href="/static/site-global.css?v=20261105content">
+  <link rel="stylesheet" href="/static/site-global.css?v=20261105topics">
 </head>
 <body id="top" class="">
   <a class="skip-link" href="#main-content">跳转至主要内容</a>
@@ -482,7 +482,23 @@
 </main>
 <footer><div class="container footer-inner"><p>© 2026 华南农业大学 · 多媒体内容安全与智能感知实验室</p><a href="/team/#faculty">返回团队 ↑</a></div></footer>
 
+  <dialog class="paper-image-dialog" aria-labelledby="paper-image-title" aria-describedby="paper-image-caption">
+  <div class="paper-image-toolbar">
+    <h2 id="paper-image-title">论文图示</h2>
+    <div class="paper-image-actions">
+      <button type="button" data-image-size aria-pressed="false" disabled>原始尺寸</button>
+      <button type="button" class="paper-image-close" data-image-close aria-label="关闭大图" autofocus>×</button>
+    </div>
+  </div>
+  <p id="paper-image-caption" class="paper-image-caption"></p>
+  <div class="paper-image-viewport" tabindex="0" aria-label="论文图示，原始尺寸下可滚动查看">
+    <p data-image-loading role="status">正在加载图示…</p>
+    <p data-image-error hidden>图示暂时无法加载，<a data-image-original target="_blank" rel="noopener noreferrer">打开原图 ↗</a></p>
+    <img data-image-full alt="" hidden>
+  </div>
+</dialog>
   <script src="/static/research-time.js?v=20261102"></script>
-  <script src="/static/main.js?v=20261105f"></script>
+  <script src="/static/main.js?v=20261105reading"></script>
+  <script src="/static/paper-image-viewer.js?v=20261105controls"></script>
 </body>
 </html>

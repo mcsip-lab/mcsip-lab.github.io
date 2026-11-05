@@ -228,6 +228,9 @@ body.design-integrated:has(.design-review-bar) { --design-review-height: 48px; }
 .intro-mobile-overview p { margin: 0; font-size: 16px; line-height: 1.7; color: #405f70; }
 .intro-mobile-overview strong { display: block; margin-bottom: 3px; color: var(--ink); font-weight: 600; }
 .intro-mobile-overview span { display: block; text-wrap: pretty; }
+.intro-mobile-overview .intro-work-link { display: inline-flex; align-items: center; justify-self: start; gap: 10px; min-height: 44px; color: var(--accent); font-size: 15px; font-weight: 600; text-underline-offset: 4px; }
+.intro-work-link:hover { text-decoration: underline; }
+.intro-mobile-overview .intro-work-link span { font-weight: 400; }
 .academic-home .home-research-details { padding: 0; min-width: 0; container-name: lab-intro; container-type: inline-size; }
 @media(max-width:980px) {
   .home-research-details .research-task-overview { padding: 20px; border: 1px solid var(--line); border-radius: 10px; background: #eef4f7; }

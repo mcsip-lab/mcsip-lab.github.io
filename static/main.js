@@ -14,6 +14,13 @@
   };
   syncResearchOrder();
   narrow.addEventListener('change', syncResearchOrder);
+  summary.querySelector('.intro-work-link')?.addEventListener('click', () => {
+    const target = document.getElementById('selected-work');
+    if (!target) return;
+    const headerHeight = document.querySelector('.site-header')?.getBoundingClientRect().height || 0;
+    const pageInset = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+    target.style.scrollMarginTop = Math.max(0, headerHeight + 16 - pageInset) + 'px';
+  });
 })();
 
 const navToggle = document.querySelector('.nav-toggle');
@@ -62,17 +69,27 @@ document.querySelectorAll('.recent-publications').forEach((section) => {
     previous.disabled = region.scrollTop <= 2;
     next.disabled = region.scrollTop + region.clientHeight >= region.scrollHeight - 2;
     const rows = allRows.filter((row) => !row.hidden);
-    const bounds = region.getBoundingClientRect();
-    const visible = rows.map((row, index) => ({index, box: row.getBoundingClientRect()}))
-      .filter(({box}) => box.bottom > bounds.top + 6 && box.top < bounds.bottom - 6);
-    position.textContent = visible.length
-      ? (visible[0].index + 1) + '–' + (visible[visible.length - 1].index + 1) + ' / ' + rows.length + ' 篇'
-      : rows.length + ' 篇';
+    position.textContent = '共 ' + rows.length + ' 篇';
   };
-  const browse = (direction) => region.scrollBy({
-    top: direction * region.clientHeight * .75,
-    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
-  });
+  const browse = (direction) => {
+    const rows = allRows.filter((row) => !row.hidden);
+    if (!rows.length) return;
+    const bounds = region.getBoundingClientRect();
+    const first = rows.findIndex((row) => row.getBoundingClientRect().bottom > bounds.top + 2);
+    if (first < 0) return;
+    const target = rows[Math.max(0, Math.min(rows.length - 1, first + direction * 2))];
+    const targetDistance = target.getBoundingClientRect().top - bounds.top;
+    const headerHeight = document.querySelector('.site-header')?.getBoundingClientRect().height || 0;
+    const screenBudget = Math.max(1,
+      Math.min(bounds.bottom, window.innerHeight) - Math.max(bounds.top, headerHeight));
+    const maxStep = Math.min(region.clientHeight, screenBudget) * .8;
+    // Advance about two papers, retaining overlap when entries or the column are tall.
+    const distance = targetDistance * direction > 2 ? Math.abs(targetDistance) : maxStep;
+    region.scrollBy({
+      top: direction * Math.min(distance, maxStep),
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+    });
+  };
   previous?.addEventListener('click', () => browse(-1));
   next?.addEventListener('click', () => browse(1));
   region.addEventListener('scroll', updateBrowse, {passive: true});
