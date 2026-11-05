@@ -59,6 +59,7 @@ html { scroll-padding-top: 108px; }
 .profile-copy > p { max-width: 52em; font-size: 17px; line-height: 1.8; }
 .profile-links { font-size: 16px; }
 .profile-honors h3 { font-size: 17px; }
+.profile-honors .honors-source { margin: 12px 0 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
 .research-detail { width: min(1120px,calc(100% - 64px)); margin-block: 36px 48px; }
 .research-detail-venue { margin-bottom: 13px; color: #356780; font-size: 16px; }
 .research-detail h1 { max-width: 1050px; margin: 0 0 18px; color: #193a50; font-size: clamp(25px,2.5vw,37px); line-height: 1.4; }
