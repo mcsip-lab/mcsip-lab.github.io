@@ -92,7 +92,7 @@
     const count = document.createElement('strong');
     count.textContent = matches.length;
     const filtered = state.q || state.year || state.kind;
-    status.append(filtered ? '找到 ' : '全部 ', count, ' 项成果');
+    status.append(filtered ? '找到 ' : '全部 ', count, ' 篇论文');
     heading.replaceChildren(status);
     if (filtered) {
       const clear = document.createElement('a');

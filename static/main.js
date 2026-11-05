@@ -1,3 +1,21 @@
+// Keep one copy of the detailed research content in the active reading order.
+(() => {
+  const intro = document.querySelector('.academic-home .intro-copy');
+  const tasks = intro?.querySelector('.research-task-overview');
+  const summary = intro?.querySelector('.intro-mobile-overview');
+  const details = document.querySelector('.home-research-details');
+  if (!tasks || !summary || !details) return;
+  const narrow = window.matchMedia('(max-width:980px)');
+  const syncResearchOrder = () => {
+    const target = narrow.matches ? details : intro;
+    if (tasks.parentElement !== target) target.append(tasks);
+    summary.hidden = !narrow.matches;
+    details.hidden = !narrow.matches;
+  };
+  syncResearchOrder();
+  narrow.addEventListener('change', syncResearchOrder);
+})();
+
 const navToggle = document.querySelector('.nav-toggle');
 const siteNav = document.querySelector('.site-nav');
 

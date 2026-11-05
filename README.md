@@ -2,6 +2,10 @@
 
 本仓库包含实验室主页的公开静态页面，用于 GitHub Pages 发布。成员资料、论文、代码和图片来源入口均保留在网页中。
 
+正式主页：https://scau-mcsip.github.io/
+发布仓库：scau-mcsip/scau-mcsip.github.io。
+实验室简称 MCSIP；英文名称 Multimedia Content Security & Intelligent Perception。
+
 发布目录只包含公开网页及必要资产，不包含数据库、后台、运行配置或设计草稿。维护源项目与静态导出工具保留在本地开发项目中。
 
 更新网站时，在维护项目中运行：
