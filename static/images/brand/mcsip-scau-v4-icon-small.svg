@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="logo-title logo-desc">
+<title id="logo-title">MCSIP Laboratory icon</title><desc id="logo-desc">MCSIP monochrome M submark. Small-size optical master with widened information cut.</desc>
+<rect id="background" width="1024" height="1024" rx="220" fill="#183D43"/>
+<g transform="translate(122 239.62406164) scale(1.70234961)">
+<path id="M_upper" fill="#FFFFFF" d="M4 292 C29 266 77 237 130 216 L159 125 L221 245 Q224 250 227 247 L343 126 Q346 123 345 129 L320 209 L414 189 L455 48 C464 14 453 0 434 0 H382 C375 0 372 2 366 8 L257 120 L198 11 C195 4 190 0 182 0 H116 C103 0 95 7 89 28 Z"/>
+<path id="M_lower" fill="#FFFFFF" d="M312 249 L408 228 L384 300 Q378 320 359 320 H286 Z"/>
+<path id="M_accent" fill="#FFFFFF" d="M0 320 C44 300 103 265 159 245 Q167 242 165 249 L139 320 Z"/>
+</g>
+</svg>

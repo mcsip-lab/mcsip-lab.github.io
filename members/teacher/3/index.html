@@ -4,15 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="多媒体内容安全与智能感知实验室，研究数字水印、可逆信息隐藏、多媒体取证与农业视觉感知。了解成员、代表性工作、论文与开源代码。">
-  <meta name="theme-color" content="#0A376A">
+  <meta name="theme-color" content="#007A49">
   <title>汤毅超 · 多媒体内容安全与智能感知实验室</title>
-  <link rel="icon" href="/static/images/brand/mcsip-favicon.ico" type="image/vnd.microsoft.icon" sizes="16x16 24x24 32x32 48x48 64x64 128x128 256x256">
-  <link rel="icon" href="/static/images/brand/mcsip-favicon-32.png" type="image/png" sizes="32x32">
-  <link rel="icon" href="/static/images/brand/mcsip-icon-small.svg" type="image/svg+xml" sizes="any">
-  <link rel="apple-touch-icon" href="/static/images/brand/mcsip-apple-touch-icon.png">
-  <link rel="stylesheet" href="/static/style.css?v=20261102e">
+  <link rel="icon" href="/static/images/brand/mcsip-scau-v4-favicon.ico" type="image/vnd.microsoft.icon" sizes="16x16 24x24 32x32 48x48 64x64 128x128 256x256">
+  <link rel="icon" href="/static/images/brand/mcsip-scau-v4-favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/static/images/brand/mcsip-scau-v4-icon-small.svg" type="image/svg+xml" sizes="any">
+  <link rel="apple-touch-icon" href="/static/images/brand/mcsip-scau-v4-apple-touch-icon.png">
+  <link rel="stylesheet" href="/static/style.css?v=20261106align5">
   
-  <link rel="stylesheet" href="/static/site-global.css?v=20261105topics">
+  <link rel="stylesheet" href="/static/site-global.css?v=20261106align5">
 </head>
 <body id="top" class="">
   <a class="skip-link" href="#main-content">跳转至主要内容</a>
@@ -21,14 +21,14 @@
 
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand" href="/" aria-label="MCSIP · 华南农业大学多媒体内容安全与智能感知实验室首页">
-      <img class="brand-mcsip" src="/static/images/brand/mcsip-logo.svg" alt="MCSIP" width="1600" height="320">
+    <div class="brand">
+      <a class="brand-mark-link" href="/" aria-label="MCSIP 实验室首页"><picture><source media="(max-width:860px)" srcset="/static/images/brand/mcsip-scau-v4-logo.svg"><img class="brand-mcsip" src="/static/images/brand/mcsip-scau-v4-logo.svg" alt="MCSIP" width="1648" height="320"></picture></a>
       <span class="brand-wordmark">
-        <small class="brand-university">华南农业大学</small>
-        <strong class="brand-title">多媒体内容安全与智能感知实验室</strong>
+        <a class="brand-university" href="https://www.scau.edu.cn/" target="_blank" rel="noopener noreferrer"><img src="/static/images/brand/scau-official-chinese-wordmark.png" alt="华南农业大学" width="1067" height="249"></a>
+        <strong class="brand-title"><a href="/">多媒体内容安全与智能感知实验室</a></strong>
         <small class="brand-english" lang="en">Multimedia Content Security &amp; Intelligent Perception</small>
       </span>
-    </a>
+    </div>
     <button class="nav-toggle" type="button" aria-label="打开导航" aria-controls="main-navigation" aria-expanded="false"><span></span><span></span></button>
     <nav class="site-nav nav3" id="main-navigation" aria-label="主导航">
       <a href="/">首页</a>
@@ -115,25 +115,31 @@
   <div class="publication-links"><a href="https://doi.org/10.1109/TCSVT.2022.3216849" target="_blank" rel="noopener noreferrer" aria-label="阅读论文：A Highly Robust Reversible Watermarking Scheme Using Embedding Optimization and Rounded Error Compensation">论文 ↗</a><a class="code-link" href="https://github.com/yichao-tang/PZMs-RRW" target="_blank" rel="noopener noreferrer" aria-label="查看代码：A Highly Robust Reversible Watermarking Scheme Using Embedding Optimization and Rounded Error Compensation">代码 ↗</a></div>
 </article></div></section>
 </main>
-<footer><div class="container footer-inner"><p>© 2026 华南农业大学 · 多媒体内容安全与智能感知实验室</p><a href="/team/#faculty">返回团队 ↑</a></div></footer>
+<footer class="site-footer" id="university-footer">
+  <div class="container footer-inner">
+    <p>© 2026 MCSIP Lab <span aria-hidden="true">·</span> <a href="https://www.scau.edu.cn/" target="_blank" rel="noopener noreferrer">华南农业大学</a></p>
+    <a href="#top">返回顶部 ↑</a>
+  </div>
+</footer>
 
   <dialog class="paper-image-dialog" aria-labelledby="paper-image-title" aria-describedby="paper-image-caption">
   <div class="paper-image-toolbar">
     <h2 id="paper-image-title">论文图示</h2>
     <div class="paper-image-actions">
+      <output class="paper-image-zoom" data-image-zoom aria-label="图像缩放比例"></output>
       <button type="button" data-image-size aria-pressed="false" disabled>原始尺寸</button>
       <button type="button" class="paper-image-close" data-image-close aria-label="关闭大图" autofocus>×</button>
     </div>
   </div>
   <p id="paper-image-caption" class="paper-image-caption"></p>
-  <div class="paper-image-viewport" tabindex="0" aria-label="论文图示，原始尺寸下可滚动查看">
+  <div class="paper-image-viewport" tabindex="0" aria-label="论文图示，滚轮缩放，拖动平移，点击关闭">
     <p data-image-loading role="status">正在加载图示…</p>
     <p data-image-error hidden>图示暂时无法加载，<a data-image-original target="_blank" rel="noopener noreferrer">打开原图 ↗</a></p>
-    <img data-image-full alt="" hidden>
+    <div class="paper-image-stage" hidden><img data-image-full alt="" draggable="false"></div>
   </div>
 </dialog>
   <script src="/static/research-time.js?v=20261102"></script>
   <script src="/static/main.js?v=20261105reading"></script>
-  <script src="/static/paper-image-viewer.js?v=20261105controls"></script>
+  <script src="/static/paper-image-viewer-v2.js?v=20261106"></script>
 </body>
 </html>
