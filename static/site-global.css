@@ -289,14 +289,14 @@ footer { padding-block: 0; border-top: 1px solid var(--line); background: white;
 @media print { .paper-image-dialog,.paper-image-open,.paper-image-tools { display: none !important; } }
 
 /* Topic controls use the same 44px rail as keyword, year and publication type. */
-.publication-search { grid-template-columns: minmax(240px,1fr) minmax(210px,.65fr) 110px 120px auto; }
+.publication-search { grid-template-columns: minmax(240px,1fr) minmax(210px,.65fr) 128px 128px auto; }
 .home-venue[title] { text-decoration: none; border: 0; }
 #paper-topic option { font-weight: 400; }
 #paper-topic option.topic-parent-option { font-weight: 600; }
 .research-task-copy h2 a,.research-task-list dt a,.intro-mobile-overview strong a { text-decoration: underline; text-decoration-color: #DCE4E6; text-decoration-thickness: 1px; text-underline-offset: 4px; }
 .research-task-copy h2 a:hover,.research-task-list dt a:hover,.intro-mobile-overview strong a:hover,.research-task-copy h2 a:focus-visible,.research-task-list dt a:focus-visible,.intro-mobile-overview strong a:focus-visible { color: var(--accent); text-decoration-color: currentColor; }
 @media(max-width:1100px) {
-  .publication-search { grid-template-columns: minmax(0,1fr) 110px 120px auto; }
+  .publication-search { grid-template-columns: minmax(0,1fr) 128px 128px auto; }
   .publication-search .search-field { grid-column: 1 / -1; }
   .publication-search .button { grid-column: auto; }
 }
@@ -354,3 +354,11 @@ footer { padding-block: 0; border-top: 1px solid var(--line); background: white;
 .team-page .student-section .compact-heading { align-items:baseline; }
 .archive-heading { align-items:baseline; }
 .archive-heading > p { margin:0; }
+
+/* Expanded paper content follows a single readable rail; paper titles keep the full column. */
+.publication-body .paper-abstract { width:100%; max-width:56rem; }
+.publication-body .paper-abstract > p { width:100%; max-width:none; }
+.paper-abstract .archive-paper-figure { width:100%; margin:14px 0 0; padding:12px; border:1px solid var(--line); border-radius:6px; background:#fff; }
+.paper-abstract .archive-paper-figure > a { display:flex; align-items:center; justify-content:center; width:100%; max-width:100%; }
+.paper-abstract .archive-paper-figure img { display:block; width:auto; height:auto; max-width:100%; max-height:420px; margin:0; object-fit:contain; }
+@media(max-width:600px) { .paper-abstract .archive-paper-figure { padding:8px; } }
